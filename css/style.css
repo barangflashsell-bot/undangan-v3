@@ -307,7 +307,8 @@ body {
 .main-app {
   position: relative;
   min-height: 100vh;
-  padding-bottom: 90px;
+  min-height: 100dvh;
+  padding-bottom: calc(85px + env(safe-area-inset-bottom, 15px));
 }
 
 .hidden-initial {
@@ -386,15 +387,15 @@ body {
   left: 0;
   right: 0;
   z-index: 998;
-  background: rgba(14, 41, 28, 0.94);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(14, 41, 28, 0.95);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   border-top: 1px solid rgba(212, 175, 55, 0.4);
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 0.5rem 0.5rem;
-  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.25);
+  padding: 0.45rem 0.35rem calc(0.45rem + env(safe-area-inset-bottom, 0px));
+  box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.35);
 }
 
 .nav-item {
@@ -471,12 +472,15 @@ body {
 
 .hero-title {
   font-family: var(--font-heading);
-  font-size: 2.8rem;
+  font-size: clamp(1.65rem, 5.5vw, 2.8rem);
   font-weight: 700;
-  line-height: 1.18;
+  line-height: 1.25;
   color: #ffffff;
   text-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
   margin-bottom: 1.2rem;
+  word-break: normal;
+  overflow-wrap: break-word;
+  hyphens: none;
 }
 
 .hero-title .and-sym {
@@ -1500,7 +1504,7 @@ body {
 .main-footer {
   font-size: 0.82rem;
   color: var(--text-muted);
-  padding: 1.5rem 0;
+  padding: 1.5rem 0 3.5rem;
 }
 
 .signature-tag {
@@ -2115,5 +2119,369 @@ body {
 .btn-editor-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+}
+
+/* ===================================================================
+   OPTIMASI KHUSUS MOBILE & ANDROID RESPONSIVE SYSTEM
+   =================================================================== */
+
+/* Safe Area Inset Support & Smooth Touch Behavior */
+:root {
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-top: env(safe-area-inset-top, 0px);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  button, a, input, select, textarea, .nav-item, .gallery-item {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  .btn-open-invitation:active,
+  .btn-event:active,
+  .btn-submit-rsvp:active,
+  .btn-copy-account:active,
+  .btn-copy-address:active,
+  .btn-calendar-reminder:active,
+  .btn-editor-primary:active {
+    transform: scale(0.97) !important;
+    filter: brightness(0.95);
+  }
+}
+
+/* Tablet & Landscape Devices (<= 992px) */
+@media (max-width: 992px) {
+  .events-grid {
+    grid-template-columns: 1fr;
+    max-width: 580px;
+    margin: 0 auto;
+  }
+  .rsvp-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Standard Mobile Devices & Android Phones (<= 768px) */
+@media (max-width: 768px) {
+  /* Layout & Section Spacing */
+  section.section {
+    padding: 3.2rem 0;
+  }
+  .container {
+    padding: 0 1rem;
+  }
+  .glass-card {
+    padding: 1.6rem 1.15rem;
+    border-radius: 18px;
+    margin-bottom: 1.5rem;
+  }
+  .section-title {
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
+  }
+  .section-subtitle {
+    font-size: 0.85rem;
+  }
+
+  /* Form Elements: cegah auto-zoom di Android Chrome & iOS */
+  .form-control,
+  .editor-input,
+  .editor-textarea,
+  .editor-select {
+    font-size: 16px !important;
+  }
+
+  /* Section Mempelai */
+  .couple-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .couple-union-divider {
+    margin: 0.5rem 0;
+  }
+  .union-circle {
+    width: 44px;
+    height: 44px;
+    font-size: 1.1rem;
+  }
+  .couple-card {
+    padding: 1.8rem 1.15rem;
+  }
+  .couple-fullname {
+    font-size: 1.25rem;
+  }
+  .couple-parent {
+    font-size: 0.84rem;
+  }
+
+  /* Galeri Foto */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  .gallery-item {
+    height: 190px;
+    border-radius: 14px;
+  }
+
+  /* Timeline Kisah Cinta */
+  .timeline-container {
+    padding-left: 1.6rem;
+  }
+  .timeline-container::before {
+    left: 7px;
+  }
+  .timeline-dot {
+    left: -1.6rem;
+    width: 24px;
+    height: 24px;
+    font-size: 0.68rem;
+    transform: translateX(4px);
+  }
+  .timeline-content {
+    padding: 1.15rem 1rem;
+  }
+  .timeline-heading {
+    font-size: 1.1rem;
+  }
+
+  /* Kartu Rekening Amplop Digital */
+  .bank-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  /* Drawer Editor Modal di Layar HP */
+  .editor-modal {
+    padding: 0.4rem;
+    align-items: flex-end;
+  }
+  .editor-container {
+    max-height: 94dvh;
+    border-radius: 20px 20px 12px 12px;
+  }
+  .editor-header {
+    padding: 0.9rem 1.15rem;
+  }
+  .editor-header-title h3 {
+    font-size: 1.05rem;
+  }
+  .editor-header-title p {
+    font-size: 0.72rem;
+  }
+  .editor-tabs-nav {
+    padding: 0.6rem 1rem;
+    gap: 0.35rem;
+  }
+  .editor-tab-btn {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.76rem;
+  }
+  .editor-body {
+    padding: 1.15rem 1rem;
+  }
+  .editor-footer {
+    padding: 0.85rem 1rem;
+    flex-direction: column-reverse;
+    gap: 0.6rem;
+  }
+  .editor-footer-left,
+  .editor-footer-right {
+    width: 100%;
+    display: flex;
+    gap: 0.5rem;
+  }
+  .editor-footer-left .btn-editor-danger,
+  .editor-footer-right .btn-editor-secondary {
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+    display: inline-flex;
+    padding: 0.65rem 0.8rem;
+  }
+  .editor-footer-right .btn-editor-primary {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* Compact Mobile & Android Layar Saku (<= 480px) */
+@media (max-width: 480px) {
+  /* Cover Gate */
+  .welcome-cover {
+    padding: 0.75rem;
+  }
+  .cover-card {
+    padding: 1.6rem 1.15rem;
+    border-radius: 22px;
+  }
+  .cover-couple-name {
+    font-size: clamp(1.75rem, 6.5vw, 2.15rem);
+    margin-bottom: 1rem;
+  }
+  .cover-photo-frame {
+    width: 140px;
+    height: 190px;
+    margin-bottom: 1.15rem;
+    border-radius: 80px 80px 14px 14px;
+  }
+  .guest-box {
+    padding: 0.75rem 0.85rem;
+    margin-bottom: 1.15rem;
+  }
+  .guest-name {
+    font-size: 1.18rem;
+  }
+  .btn-open-invitation {
+    padding: 0.8rem 1.4rem;
+    font-size: 0.92rem;
+    width: 100%;
+    justify-content: center;
+    min-height: 48px;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    padding: 3.2rem 0.5rem 2rem;
+    min-height: 85vh;
+    min-height: 85dvh;
+  }
+  .hero-title {
+    font-size: clamp(1.35rem, 5.2vw, 1.75rem);
+    line-height: 1.3;
+    padding: 0 0.25rem;
+  }
+  .hero-title .and-sym {
+    display: block;
+    font-size: 1.3rem;
+    margin: 0.15rem 0;
+  }
+  .countdown-card {
+    padding: 1.25rem 0.85rem;
+  }
+  .countdown-grid {
+    gap: 0.35rem;
+  }
+  .time-box {
+    padding: 0.65rem 0.25rem;
+    border-radius: 10px;
+  }
+  .time-num {
+    font-size: 1.35rem;
+  }
+  .time-label {
+    font-size: 0.65rem;
+  }
+
+  /* Quran Quote & Salam */
+  .quran-arabic {
+    font-size: clamp(1.15rem, 4vw, 1.4rem);
+    line-height: 2.1;
+  }
+  .quran-meaning {
+    font-size: 0.82rem;
+    line-height: 1.65;
+  }
+  .santri-tadzim {
+    font-size: 0.85rem;
+    line-height: 1.7;
+  }
+
+  /* Mempelai Card */
+  .couple-arch-frame {
+    width: 145px;
+    height: 195px;
+    border-radius: 80px 80px 16px 16px;
+    margin-bottom: 1.15rem;
+  }
+  .couple-fullname {
+    font-size: 1.2rem;
+  }
+  .couple-parent {
+    font-size: 0.82rem;
+  }
+  .santri-origin {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.6rem;
+  }
+
+  /* Events Actions */
+  .event-name {
+    font-size: 1.35rem;
+  }
+  .event-action-buttons {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .btn-event {
+    width: 100%;
+    min-height: 46px;
+    font-size: 0.88rem;
+  }
+
+  /* Bank Card */
+  .account-number {
+    font-size: clamp(1.15rem, 4.5vw, 1.35rem);
+    letter-spacing: 1.5px;
+  }
+  .btn-copy-account,
+  .btn-copy-address {
+    min-height: 44px;
+    font-size: 0.85rem;
+  }
+
+  /* Floating Buttons */
+  .floating-editor-btn {
+    top: 12px;
+    right: 12px;
+    padding: 0.45rem 0.8rem;
+    font-size: 0.76rem;
+  }
+  .floating-music-btn {
+    bottom: 78px;
+    right: 12px;
+  }
+  .vinyl-disc {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Bottom Navbar */
+  .nav-item {
+    font-size: 0.62rem;
+    padding: 0.25rem 0.2rem;
+  }
+  .nav-item i {
+    font-size: 1rem;
+  }
+}
+
+/* Extra Small Android (<= 360px seperti Galaxy A Series kecil) */
+@media (max-width: 360px) {
+  .cover-card {
+    padding: 1.35rem 0.9rem;
+  }
+  .cover-couple-name {
+    font-size: 1.6rem;
+  }
+  .cover-photo-frame {
+    width: 125px;
+    height: 165px;
+  }
+  .time-num {
+    font-size: 1.15rem;
+  }
+  .time-label {
+    font-size: 0.6rem;
+  }
+  .nav-item span {
+    font-size: 0.58rem;
+  }
 }
 
