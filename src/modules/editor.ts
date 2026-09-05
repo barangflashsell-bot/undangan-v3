@@ -6,7 +6,7 @@ import { DEFAULT_WEDDING_DATA } from '../data/defaultData';
 import { showToast } from './rsvp';
 import { updateGuestGeneratorPreview } from './guestGenerator';
 
-export const STORAGE_KEY = 'wedding_santri_data_v3';
+export const STORAGE_KEY = 'wedding_syari_nasional_v3';
 
 export function loadWeddingData(): WeddingData {
   try {
@@ -97,12 +97,12 @@ export function initEditorPanel(
   }
 
   const handleReset = () => {
-    if (confirm('Apakah Anda yakin ingin mengembalikan seluruh data undangan ke format bawaan awal santri?')) {
+    if (confirm('Apakah Anda yakin ingin mengembalikan seluruh data undangan ke format bawaan awal?')) {
       localStorage.removeItem(STORAGE_KEY);
       const defaultClone = JSON.parse(JSON.stringify(DEFAULT_WEDDING_DATA));
       onSave(defaultClone);
       populateEditorForm(defaultClone);
-      showToast('Data undangan telah di-reset ke bawaan santri awal.');
+      showToast('Data undangan telah di-reset ke bawaan awal.');
     }
   };
 
@@ -291,7 +291,7 @@ function getVal(id: string): string {
 function collectFormData(activeData: WeddingData): WeddingData {
   return {
     general: {
-      pageTitle: `Undangan Pernikahan | ${getVal('editGroomShortName') || 'Farhan'} & ${getVal('editBrideShortName') || 'Fatimah'} (Tema Santri & Alam)`,
+      pageTitle: `Undangan Pernikahan | ${getVal('editGroomShortName') || 'Farhan'} & ${getVal('editBrideShortName') || 'Fatimah'} (Walimatul 'Urs Syar'i & Alam)`,
       metaDescription: `Walimatul 'Urs ${getVal('editGroomFullName')} & ${getVal('editBrideFullName')}`,
       coverSubheading: getVal('editCoverSubheading'),
       coverBlessing: getVal('editCoverBlessing'),

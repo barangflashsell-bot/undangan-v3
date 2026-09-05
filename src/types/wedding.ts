@@ -1,5 +1,5 @@
 /**
- * Definisi Type & Interface untuk Undangan Pernikahan Santri V3
+ * Definisi Type & Interface untuk Undangan Pernikahan Nasional Syar'i V3
  */
 
 export interface GeneralInfo {

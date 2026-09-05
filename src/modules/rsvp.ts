@@ -4,7 +4,7 @@
 import type { WishItem } from '../types/wedding';
 import { DEFAULT_WISHES } from '../data/defaultData';
 
-const WISHES_STORAGE_KEY = 'wedding_santri_wishes';
+const WISHES_STORAGE_KEY = 'wedding_syari_nasional_wishes';
 
 export function initRsvpAndWishes(): void {
   const form = document.getElementById('rsvpForm') as HTMLFormElement | null;

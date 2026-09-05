@@ -1,6 +1,6 @@
 /**
- * UNDANGAN PERNIKAHAN TEMA SANTRI & PEMANDANGAN ALAM
- * Farhan & Fatimah - Walimatul 'Urs
+ * UNDANGAN PERNIKAHAN TEMA NASIONAL SYAR'I & PEMANDANGAN ALAM
+ * Farhan & Fatimah - Walimatul 'Urs Syar'i
  * Dengan Editor Data & Guest Link Generator
  */
 
@@ -9,35 +9,35 @@
    =================================================================== */
 const DEFAULT_WEDDING_DATA = {
   general: {
-    pageTitle: "Undangan Pernikahan | Farhan & Fatimah (Tema Santri & Alam)",
-    metaDescription: "Walimatul 'Urs Muhammad Farhan Al-Hafidz & Siti Fatimah Az-Zahra - Merajut Berkah dalam Bingkai Mahabbah & Alam Asri Pesantren",
-    coverSubheading: "WALIMATUL 'URS",
-    coverBlessing: "Menenun Berkah di Bumi Pesantren",
+    pageTitle: "Undangan Pernikahan | Farhan & Fatimah (Tema Nasional Syar'i)",
+    metaDescription: "Walimatul 'Urs Muhammad Farhan & Siti Fatimah Az-Zahra - Menuju Keluarga Sakinah Mawaddah Warahmah Berbalut Keindahan Alam Nusantara",
+    coverSubheading: "WALIMATUL 'URS SYAR'I",
+    coverBlessing: "Merajut Berkah di Bawah Ridho Ilahi",
     coverImg: "assets/images/couple_santri.jpg",
     heroBgImg: "assets/images/hero_scenery.jpg",
-    heroBadge: "Walimatul 'Urs Santri",
+    heroBadge: "Walimatul 'Urs Syar'i",
     heroDate: "Ahad, 25 Oktober 2026",
-    heroLocation: "Lereng Hijau Pesantren Al-Mubarokah"
+    heroLocation: "Kawasan Pegunungan & Lembah Pinus Asri"
   },
   groom: {
     shortName: "Farhan",
-    roleBadge: "Kang Santri",
-    fullName: "Muhammad Farhan Al-Hafidz, S.Pd.",
-    father: "KH. Ahmad Dahlan Basri",
-    mother: "Nyai Hj. Aminah Masrurah",
-    pesantren: "Alumni Pondok Pesantren Raudlatul Ulum & Ma'had Aly",
-    instaUser: "@kangfarhan.hafiz",
+    roleBadge: "Mempelai Pria",
+    fullName: "Muhammad Farhan, S.Pd.",
+    father: "Bapak H. Ahmad Dahlan Basri",
+    mother: "Ibu Hj. Aminah Masrurah",
+    pesantren: "Sarjana Pendidikan Islam & Penggiat Dakwah Literasi",
+    instaUser: "@farhan.ahmad",
     instaLink: "https://instagram.com",
     img: "assets/images/groom_portrait.jpg"
   },
   bride: {
     shortName: "Fatimah",
-    roleBadge: "Ning Santri",
+    roleBadge: "Mempelai Wanita",
     fullName: "Siti Fatimah Az-Zahra, S.Ag.",
-    father: "KH. Mansyur Shodiq",
-    mother: "Nyai Hj. Siti Khadijah",
-    pesantren: "Alumni Pondok Pesantren Al-Fath Lil Banat",
-    instaUser: "@ningfatimah.zahra",
+    father: "Bapak H. Mansyur Shodiq",
+    mother: "Ibu Hj. Siti Khadijah",
+    pesantren: "Sarjana Agama Islam & Pemerhati Pendidikan Keluarga",
+    instaUser: "@fatimah.azzahra",
     instaLink: "https://instagram.com",
     img: "assets/images/bride_portrait.jpg"
   },
@@ -47,16 +47,16 @@ const DEFAULT_WEDDING_DATA = {
       title: "Akad Nikah",
       date: "Ahad, 25 Oktober 2026",
       time: "Pukul 08.00 - 10.00 WIB",
-      venueName: "Masjid Jami' Pesantren Al-Mubarokah",
-      venueAddress: "Jl. Lembah Pinus No. 09, Kawasan Lereng Asri, Batu - Jawa Timur",
+      venueName: "Masjid Raya Al-Mubarokah",
+      venueAddress: "Jl. Lembah Pinus No. 09, Kawasan Wisata Alam Asri, Batu - Jawa Timur",
       mapsLink: "https://maps.google.com/?q=Batu+Jawa+Timur"
     },
     resepsi: {
       title: "Resepsi Pernikahan",
       date: "Ahad, 25 Oktober 2026",
       time: "Pukul 11.00 - 17.00 WIB (Selesai)",
-      venueName: "Bale Alam Santri & Taman Firdaus",
-      venueAddress: "Kawasan Wisata Alam Pesantren, Jl. Lembah Pinus No. 09, Batu - Jawa Timur",
+      venueName: "Grand Garden Hall & Bale Alam Asri",
+      venueAddress: "Kawasan Wisata Lembah Hijau, Jl. Lembah Pinus No. 09, Batu - Jawa Timur",
       mapsLink: "https://maps.google.com/?q=Batu+Jawa+Timur"
     }
   },
@@ -64,24 +64,24 @@ const DEFAULT_WEDDING_DATA = {
     quranSurah: "— QS. Ar-Rum Ayat 21 —",
     quranArabic: "وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَّوَدَّةً وَّرَحْمَةً ۗ اِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ",
     quranMeaning: "\"Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.\"",
-    greeting: "Assalamu’alaikum Warahmatullahi Wabarakatuh\nDengan memohon rahmat dan ridho Allah Subhanahu Wa Ta'ala, serta meneladani sunnah baginda Nabi Muhammad SAW, dengan kerendahan hati dan ta'dzim kami mengundang Bapak/Ibu/Saudara/i serta para Sahabat sekalian untuk menghadiri dan memberikan doa restu pada pernikahan putra-putri kami:",
-    hikmahBody: "\"Cinta sejati seorang santri bukan sekadar tentang rupa dan kata-kata manis, melainkan tentang kesiapan saling membimbing dalam taat, memuliakan Al-Qur'an, dan bersama-sama meniti jalan menuju surga-Nya.\"",
-    hikmahAuthor: "— Untaian Mutiara Santri Nusantara —",
+    greeting: "Assalamu’alaikum Warahmatullahi Wabarakatuh\nDengan memohon rahmat dan ridho Allah Subhanahu Wa Ta'ala, serta meneladani sunnah baginda Rasulullah SAW, dengan segala kerendahan hati kami mengundang Bapak/Ibu/Saudara/i sekalian untuk hadir dan memberikan doa restu pada pernikahan putra-putri kami:",
+    hikmahBody: "\"Pernikahan yang berkah adalah pertemuan dua insan yang saling menjaga kehormatan, saling melengkapi dalam ketaatan kepada Allah, serta bersama-sama meniti jalan menuju keridhoan dan surga-Nya.\"",
+    hikmahAuthor: "— Hikmah Pernikahan Syar'i —",
     milestones: [
       {
         year: "Tahun 2023",
-        title: "Pertemuan di Majelis Bahtsul Masa'il",
-        desc: "Berawal dari musyawarah ilmiah antar pondok pesantren se-Jawa Timur. Tanpa saling bertatap lama, ada rasa kagum atas keluhuran adab dan ketawadhuan masing-masing yang tersimpan rapi dalam doa sepertiga malam."
+        title: "Pertemuan Silaturahmi Akademik",
+        desc: "Berawal dari sebuah forum seminar dan kolaborasi keilmuan tingkat nasional. Dengan menjaga adab dan batasan syar'i, tersimpan kekaguman atas integritas, budi pekerti, dan kesungguhan dalam menuntut ilmu."
       },
       {
         year: "Awal 2025",
-        title: "Jalur Ta'aruf & Dawuh Kyai",
-        desc: "Melalui perantara guru mulia dan restu kedua orang tua, niat mulia ini disampaikan melalui jalur ta'aruf yang syar'i. Setelah istikharah yang panjang, Allah mantapkan hati kedua keluarga besar untuk menyatukan nasab keilmuan."
+        title: "Proses Ta'aruf yang Syar'i & Khitbah",
+        desc: "Melalui perantara keluarga yang terpercaya, niat mulia ini disampaikan melalui proses ta'aruf yang syar'i tanpa pacaran. Setelah istikharah dan musyawarah keluarga, kedua belah pihak memantapkan hati untuk melangsungkan khitbah."
       },
       {
         year: "Oktober 2026",
-        title: "Ikatan Suci Mitsaqan Ghalidha",
-        desc: "Kini, dengan mengharap barakah dari para guru dan para kiai, kami melangkah bersama menuju bahtera rumah tangga yang sakinah, mawaddah, wa rahmah di tengah syahdunya alam ciptaan-Nya."
+        title: "Ikatan Suci Akad & Mitsaqan Ghalidha",
+        desc: "Dengan memohon ridho Allah SWT dan restu kedua orang tua, kami melangkah bersama menuju ikatan suci pernikahan, membangun keluarga yang sakinah, mawaddah, wa rahmah di tengah keindahan alam ciptaan-Nya."
       }
     ]
   },
@@ -92,11 +92,11 @@ const DEFAULT_WEDDING_DATA = {
     bank2Name: "BCA",
     bank2Number: "8273940182",
     bank2Holder: "SITI FATIMAH AZ ZAHRA",
-    homeAddress: "Komplek Ndalem Pondok Pesantren Al-Mubarokah, Jl. Lembah Pinus No. 09, Desa Wisata Asri, Kec. Bumiaji, Kota Batu, Jawa Timur 65331 (Penerima: Kang Farhan / Ning Fatimah - 0812-3456-7890)"
+    homeAddress: "Kediaman Keluarga Farhan & Fatimah, Jl. Lembah Pinus No. 09, Kawasan Wisata Alam Asri, Kec. Bumiaji, Kota Batu, Jawa Timur 65331 (Penerima: Farhan / Fatimah - 0812-3456-7890)"
   }
 };
 
-const STORAGE_KEY = 'wedding_santri_data_v3';
+const STORAGE_KEY = 'wedding_syari_nasional_v3';
 let activeWeddingData = null;
 
 /* ===================================================================
@@ -663,38 +663,38 @@ function restartCountdown(isoTarget) {
    =================================================================== */
 const DEFAULT_WISHES = [
   {
-    name: 'Gus Hilman Fauzi',
+    name: 'Ustadz Hilman Fauzi',
     status: 'Hadir',
     count: '2 Orang',
-    message: 'Barakallah lakuma wa baraka alaikuma wa jama\'a bainakuma fii khair. Turut bersyukur atas pernikahan Kang Farhan & Ning Fatimah. Semoga berkah melimpah, ilmunya terus bermanfaat bagi umat.',
+    message: 'Barakallah lakuma wa baraka alaikuma wa jama\'a bainakuma fii khair. Turut bersyukur atas pernikahan Farhan & Fatimah. Semoga berkah melimpah, ilmunya terus bermanfaat bagi ummat.',
     time: '1 jam yang lalu'
   },
   {
-    name: 'Keluarga Besar Ponpes Al-Fath',
+    name: 'Keluarga Besar Sahabat Kuliah',
     status: 'Hadir',
     count: '3 Orang atau lebih',
-    message: 'Alhamdulillah, selamat untuk Ning Fatimah dan Kang Farhan. Mengalir doa tulus dari para asatidz dan santri putri. Semoga menjadi keluarga sakinah mawaddah wa rahmah.',
+    message: 'Alhamdulillah, selamat untuk Mas Farhan dan Mbak Fatimah. Mengalir doa tulus dari kami semua. Semoga menjadi keluarga sakinah mawaddah wa rahmah.',
     time: '3 jam yang lalu'
   },
   {
-    name: 'Ustadz Rofi\'i Al-Manshuri',
+    name: 'dr. Rofi\'i & Rekan Kerja',
     status: 'Hadir',
     count: '2 Orang',
-    message: 'Selamat menempuh hidup baru sahabat seperjuangan bahtsul masa\'il. Semoga senantiasa rukun, saling menopang dalam dakwah, dan langgeng hingga jannah.',
+    message: 'Selamat menempuh hidup baru sahabat seperjuangan. Semoga senantiasa rukun, saling menopang dalam kebaikan, dan langgeng hingga jannah.',
     time: '5 jam yang lalu'
   },
   {
     name: 'Hj. Rohmah & H. Subhan',
     status: 'Hadir',
     count: '2 Orang',
-    message: 'Selamat untuk kedua mempelai dan keluarga besar KH. Ahmad Dahlan & KH. Mansyur Shodiq. Insya Allah kami sekeluarga hadir ke Batu mendoakan langsung.',
+    message: 'Selamat untuk kedua mempelai dan keluarga besar Bapak H. Ahmad Dahlan & Bapak H. Mansyur Shodiq. Insya Allah kami sekeluarga hadir mendoakan langsung.',
     time: 'Kemarin'
   },
   {
-    name: 'Ahmad Faiz (Alumni Raudlatul Ulum)',
+    name: 'Ahmad Faiz (Sahabat Alumni)',
     status: 'Masih Ragu',
     count: '1 Orang',
-    message: 'Selamat berbahagia Kang Farhan! Semoga acaranya lancar tanpa halangan. Insya Allah diusahakan hadir sowan.',
+    message: 'Selamat berbahagia sahabat Farhan! Semoga acaranya lancar tanpa halangan. Insya Allah diusahakan hadir.',
     time: 'Kemarin'
   }
 ];
@@ -704,10 +704,10 @@ function initRsvpAndWishes() {
   const wishesList = document.getElementById('wishesList');
   const badge = document.getElementById('wishesCountBadge');
 
-  let storedWishes = JSON.parse(localStorage.getItem('wedding_santri_wishes'));
+  let storedWishes = JSON.parse(localStorage.getItem('wedding_syari_nasional_wishes'));
   if (!storedWishes || storedWishes.length === 0) {
     storedWishes = DEFAULT_WISHES;
-    localStorage.setItem('wedding_santri_wishes', JSON.stringify(storedWishes));
+    localStorage.setItem('wedding_syari_nasional_wishes', JSON.stringify(storedWishes));
   }
 
   function renderWishes() {
@@ -718,29 +718,31 @@ function initRsvpAndWishes() {
       let statusClass = 'status-hadir';
       let statusText = 'Insya Allah Hadir';
 
-      if (item.status === 'Masih Ragu') {
+      if (item.status === 'Tidak Hadir') {
+        statusClass = 'status-tidakhadir';
+        statusText = 'Mohon Maaf Tidak Bisa Hadir';
+      } else if (item.status === 'Masih Ragu') {
         statusClass = 'status-ragu';
-        statusText = 'Belum Pasti';
-      } else if (item.status === 'Berhalangan') {
-        statusClass = 'status-berhalangan';
-        statusText = 'Berhalangan';
+        statusText = 'Masih Ragu / Belum Pasti';
       }
 
-      const itemEl = document.createElement('div');
-      itemEl.className = 'wish-item';
-      itemEl.innerHTML = `
-        <div class="wish-top">
-          <span class="wish-author">${escapeHtml(item.name)}</span>
-          <span class="wish-status ${statusClass}"><i class="fa-solid fa-circle-check"></i> ${statusText}</span>
+      const card = document.createElement('div');
+      card.className = 'wish-item';
+      card.innerHTML = `
+        <div class="wish-header">
+          <div class="wish-author-info">
+            <span class="wish-author-name">${escapeHtml(item.name)}</span>
+            <span class="wish-status ${statusClass}"><i class="fa-solid fa-circle-check"></i> ${statusText} (${escapeHtml(item.count || '1 Orang')})</span>
+          </div>
+          <span class="wish-time">${escapeHtml(item.time || 'Baru saja')}</span>
         </div>
-        <p class="wish-msg">${escapeHtml(item.message)}</p>
-        <span class="wish-time"><i class="fa-regular fa-clock"></i> ${escapeHtml(item.time || 'Baru saja')}</span>
+        <p class="wish-message">${escapeHtml(item.message)}</p>
       `;
-      wishesList.appendChild(itemEl);
+      wishesList.appendChild(card);
     });
 
     if (badge) {
-      badge.textContent = `${storedWishes.length} Doa Tersimpan`;
+      badge.textContent = `${storedWishes.length} Doa`;
     }
   }
 
@@ -750,12 +752,15 @@ function initRsvpAndWishes() {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      const name = document.getElementById('senderName').value.trim();
-      const status = document.getElementById('attendanceStatus').value;
-      const count = document.getElementById('guestCount').value;
-      const message = document.getElementById('blessingMessage').value.trim();
+      const name = (document.getElementById('guestInputName') || { value: '' }).value.trim();
+      const status = (document.getElementById('attendanceStatus') || { value: 'Hadir' }).value;
+      const count = (document.getElementById('guestCount') || { value: '1 Orang' }).value;
+      const message = (document.getElementById('blessingMessage') || { value: '' }).value.trim();
 
-      if (!name || !message) return;
+      if (!name || !message) {
+        showToast('Mohon isi nama dan pesan doa Anda terlebih dahulu.');
+        return;
+      }
 
       const newWish = {
         name,
@@ -766,7 +771,7 @@ function initRsvpAndWishes() {
       };
 
       storedWishes.unshift(newWish);
-      localStorage.setItem('wedding_santri_wishes', JSON.stringify(storedWishes));
+      localStorage.setItem('wedding_syari_nasional_wishes', JSON.stringify(storedWishes));
       renderWishes();
 
       showToast('Jazakumullah khairan! Doa dan konfirmasi kehadiran Anda telah tersimpan.');
@@ -1188,7 +1193,7 @@ function getVal(id) {
 function handleSaveEditor() {
   const updatedData = {
     general: {
-      pageTitle: `Undangan Pernikahan | ${getVal('editGroomShortName') || 'Farhan'} & ${getVal('editBrideShortName') || 'Fatimah'} (Tema Santri & Alam)`,
+      pageTitle: `Undangan Pernikahan | ${getVal('editGroomShortName') || 'Farhan'} & ${getVal('editBrideShortName') || 'Fatimah'} (Tema Nasional Syar'i)`,
       metaDescription: `Walimatul 'Urs ${getVal('editGroomFullName')} & ${getVal('editBrideFullName')}`,
       coverSubheading: getVal('editCoverSubheading'),
       coverBlessing: getVal('editCoverBlessing'),
@@ -1286,7 +1291,7 @@ function handleResetDefault() {
     activeWeddingData = JSON.parse(JSON.stringify(DEFAULT_WEDDING_DATA));
     applyWeddingData(activeWeddingData);
     populateEditorForm(activeWeddingData);
-    showToast('Data undangan telah di-reset ke bawaan santri awal.');
+    showToast('Data undangan telah di-reset ke pengaturan bawaan.');
   }
 }
 

@@ -1,6 +1,6 @@
 /**
  * Main TypeScript Entry Point
- * Undangan Pernikahan Santri V3
+ * Undangan Pernikahan Nasional Syar'i V3
  */
 
 import type { WeddingData } from './types/wedding';
