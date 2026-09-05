@@ -710,18 +710,7 @@ body {
 }
 
 .badge-role {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--primary-deep);
-  color: var(--gold-light);
-  font-size: 0.75rem;
-  font-weight: 700;
-  padding: 0.25rem 0.9rem;
-  border-radius: 20px;
-  border: 1px solid var(--gold-primary);
-  white-space: nowrap;
+  display: none !important;
 }
 
 .couple-fullname {
