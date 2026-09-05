@@ -1628,3 +1628,503 @@ body {
   color: var(--gold-light);
   font-size: 1.1rem;
 }
+
+/* ===================================================================
+   FLOATING EDITOR TRIGGER BUTTON
+   =================================================================== */
+.floating-editor-btn {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: rgba(14, 41, 28, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid var(--gold-primary);
+  color: var(--gold-light);
+  padding: 0.55rem 1.1rem;
+  border-radius: 30px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35), 0 0 12px rgba(212, 175, 55, 0.25);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.floating-editor-btn:hover {
+  background: var(--gold-primary);
+  color: var(--primary-deep);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.45);
+}
+
+.floating-editor-btn i {
+  font-size: 0.95rem;
+  transition: transform 0.4s ease;
+}
+
+.floating-editor-btn:hover i {
+  transform: rotate(45deg);
+}
+
+@media (max-width: 576px) {
+  .floating-editor-btn span {
+    display: none;
+  }
+  .floating-editor-btn {
+    padding: 0.6rem;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    justify-content: center;
+    top: 14px;
+    right: 14px;
+  }
+}
+
+/* ===================================================================
+   EDITOR MODAL & DRAWER STYLING
+   =================================================================== */
+.editor-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.editor-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.editor-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 22, 16, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.editor-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 860px;
+  max-height: 90vh;
+  background: linear-gradient(145deg, rgba(17, 49, 34, 0.96), rgba(11, 31, 21, 0.98));
+  border: 1.5px solid rgba(212, 175, 55, 0.45);
+  border-radius: 20px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65), 0 0 30px rgba(212, 175, 55, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform: translateY(20px) scale(0.97);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.editor-modal.active .editor-container {
+  transform: translateY(0) scale(1);
+}
+
+/* Editor Header */
+.editor-header {
+  padding: 1.1rem 1.5rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(14, 41, 28, 0.6);
+}
+
+.editor-header-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.editor-header-title .header-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid var(--gold-primary);
+  color: var(--gold-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.editor-header-title h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-family: var(--font-heading);
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.editor-header-title p {
+  margin: 0;
+  font-size: 0.76rem;
+  color: var(--gold-light);
+  opacity: 0.85;
+}
+
+.btn-editor-close {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--tr-smooth);
+}
+
+.btn-editor-close:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+/* Editor Tab Nav */
+.editor-tabs-nav {
+  display: flex;
+  gap: 0.4rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(9, 26, 18, 0.7);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.editor-tabs-nav::-webkit-scrollbar {
+  height: 4px;
+}
+
+.editor-tabs-nav::-webkit-scrollbar-thumb {
+  background: var(--gold-primary);
+  border-radius: 4px;
+}
+
+.editor-tab-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 0.5rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: all 0.25s ease;
+}
+
+.editor-tab-btn i {
+  font-size: 0.85rem;
+  color: var(--gold-light);
+}
+
+.editor-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+}
+
+.editor-tab-btn.active {
+  background: rgba(212, 175, 55, 0.18);
+  border-color: var(--gold-primary);
+  color: var(--gold-light);
+}
+
+/* Editor Body & Scroll */
+.editor-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+  scrollbar-width: thin;
+}
+
+.editor-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.editor-body::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.4);
+  border-radius: 4px;
+}
+
+.editor-tab-pane {
+  display: none;
+  animation: fadeInPane 0.3s ease;
+}
+
+.editor-tab-pane.active {
+  display: block;
+}
+
+@keyframes fadeInPane {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Form Layout & Components */
+.editor-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 1.2rem;
+}
+
+.editor-form-grid.single-col {
+  grid-template-columns: 1fr;
+}
+
+.span-2 {
+  grid-column: span 2;
+}
+
+@media (max-width: 680px) {
+  .editor-form-grid {
+    grid-template-columns: 1fr;
+  }
+  .span-2 {
+    grid-column: span 1;
+  }
+}
+
+.editor-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.editor-group label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gold-light);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.editor-group label small {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 400;
+}
+
+.editor-input,
+.editor-textarea,
+.editor-select {
+  background: rgba(8, 24, 16, 0.7);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  color: #fff;
+  padding: 0.65rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-family: var(--font-body);
+  transition: all 0.25s ease;
+  width: 100%;
+}
+
+.editor-textarea {
+  resize: vertical;
+  line-height: 1.45;
+}
+
+.editor-input:focus,
+.editor-textarea:focus,
+.editor-select:focus {
+  outline: none;
+  border-color: var(--gold-primary);
+  background: rgba(14, 41, 28, 0.9);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.25);
+}
+
+.editor-section-heading {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #fff;
+  border-bottom: 1px dashed rgba(212, 175, 55, 0.3);
+  padding-bottom: 0.45rem;
+  margin: 1.2rem 0 0.8rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.editor-section-heading:first-of-type {
+  margin-top: 0;
+}
+
+.editor-section-heading i {
+  color: var(--gold-primary);
+}
+
+/* Image preview row */
+.image-preview-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.img-preview-thumb {
+  width: 55px;
+  height: 55px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1.5px solid var(--gold-primary);
+  background: #000;
+  flex-shrink: 0;
+}
+
+/* Guest Generator Specific */
+.guest-gen-box {
+  background: rgba(14, 41, 28, 0.55);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 12px;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.guest-gen-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.btn-gen-action {
+  flex: 1;
+  min-width: 140px;
+  padding: 0.65rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: var(--tr-smooth);
+}
+
+.btn-gen-copy {
+  background: var(--gold-primary);
+  color: var(--primary-deep);
+}
+
+.btn-gen-copy:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+.btn-gen-wa {
+  background: #25D366;
+  color: #fff;
+}
+
+.btn-gen-wa:hover {
+  background: #20BA5A;
+  transform: translateY(-2px);
+}
+
+.guest-url-preview {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 0.65rem 0.85rem;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: var(--gold-light);
+  word-break: break-all;
+  border: 1px dashed rgba(212, 175, 55, 0.3);
+}
+
+/* Editor Footer */
+.editor-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  background: rgba(14, 41, 28, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.editor-footer-left,
+.editor-footer-right {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.btn-editor-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 0.6rem 1.1rem;
+  border-radius: 8px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--tr-smooth);
+}
+
+.btn-editor-secondary:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.btn-editor-danger {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #fca5a5;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--tr-smooth);
+}
+
+.btn-editor-danger:hover {
+  background: rgba(239, 68, 68, 0.3);
+  color: #fff;
+}
+
+.btn-editor-primary {
+  background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
+  color: var(--primary-deep);
+  border: none;
+  padding: 0.65rem 1.4rem;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-editor-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+}
+

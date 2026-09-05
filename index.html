@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Undangan Pernikahan | Farhan & Fatimah (Tema Santri & Alam)</title>
-  <meta name="description" content="Walimatul 'Urs Muhammad Farhan Al-Hafidz & Siti Fatimah Az-Zahra - Merajut Berkah dalam Bingkai Mahabbah & Alam Asri Pesantren">
-  <meta property="og:title" content="Walimatul 'Urs Farhan & Fatimah">
-  <meta property="og:description" content="Undangan Pernikahan Digital Tema Santri & Lanskap Pemandangan Alam">
-  <meta property="og:image" content="assets/images/couple_santri.jpg">
+  <title id="pageTitle">Undangan Pernikahan | Farhan & Fatimah (Tema Santri & Alam)</title>
+  <meta name="description" id="metaDescription" content="Walimatul 'Urs Muhammad Farhan Al-Hafidz & Siti Fatimah Az-Zahra - Merajut Berkah dalam Bingkai Mahabbah & Alam Asri Pesantren">
+  <meta property="og:title" id="ogTitle" content="Walimatul 'Urs Farhan & Fatimah">
+  <meta property="og:description" id="ogDesc" content="Undangan Pernikahan Digital Tema Santri & Lanskap Pemandangan Alam">
+  <meta property="og:image" id="ogImage" content="assets/images/couple_santri.jpg">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,6 +25,12 @@
   <!-- Canvas Falling Petals & Leaves -->
   <canvas id="natureCanvas"></canvas>
 
+  <!-- FLOATING EDIT ALL DATA BUTTON -->
+  <button id="btnOpenEditor" class="floating-editor-btn" title="Kelola & Rubah Semua Data Undangan">
+    <i class="fa-solid fa-sliders"></i>
+    <span>Edit Data Undangan</span>
+  </button>
+
   <!-- COVER / WELCOME GATE OVERLAY -->
   <div id="welcomeCover" class="welcome-cover">
     <div class="scenery-bg-layer"></div>
@@ -41,16 +47,16 @@
       </div>
 
       <div class="bismillah-text">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
-      <p class="cover-subheading">WALIMATUL 'URS</p>
+      <p id="coverSubheading" class="cover-subheading">WALIMATUL 'URS</p>
       
       <div class="cover-couple-name">
-        <span class="first-name">Farhan</span>
+        <span id="coverGroomName" class="first-name">Farhan</span>
         <span class="ampersand">&</span>
-        <span class="last-name">Fatimah</span>
+        <span id="coverBrideName" class="last-name">Fatimah</span>
       </div>
 
       <div class="cover-photo-frame">
-        <img src="assets/images/couple_santri.jpg" alt="Farhan & Fatimah" class="cover-couple-img">
+        <img id="coverCoupleImg" src="assets/images/couple_santri.jpg" alt="Farhan & Fatimah" class="cover-couple-img">
         <div class="frame-border"></div>
       </div>
 
@@ -65,7 +71,7 @@
         <span>Buka Undangan</span>
       </button>
 
-      <p class="blessing-quote"><i class="fa-solid fa-leaf"></i> Menenun Berkah di Bumi Pesantren <i class="fa-solid fa-leaf"></i></p>
+      <p id="coverBlessingQuote" class="blessing-quote"><i class="fa-solid fa-leaf"></i> Menenun Berkah di Bumi Pesantren <i class="fa-solid fa-leaf"></i></p>
     </div>
   </div>
 
@@ -85,17 +91,17 @@
     <!-- HERO SECTION -->
     <section id="hero" class="hero-section">
       <div class="hero-scenery-backdrop">
-        <img src="assets/images/hero_scenery.jpg" alt="Pemandangan Pesantren di Lereng Gunung" class="hero-bg-img">
+        <img id="heroBgImg" src="assets/images/hero_scenery.jpg" alt="Pemandangan Pesantren di Lereng Gunung" class="hero-bg-img">
         <div class="hero-gradient-overlay"></div>
       </div>
       
       <div class="hero-content container">
-        <div class="islamic-badge">
+        <div id="heroBadge" class="islamic-badge">
           <i class="fa-solid fa-star-and-crescent"></i> Walimatul 'Urs Santri
         </div>
-        <h1 class="hero-title">Muhammad Farhan<br><span class="and-sym">&</span><br>Siti Fatimah</h1>
-        <p class="hero-date"><i class="fa-regular fa-calendar-check"></i> Ahad, 25 Oktober 2026</p>
-        <p class="hero-location-text"><i class="fa-solid fa-mountain-sun"></i> Lereng Hijau Pesantren Al-Mubarokah</p>
+        <h1 class="hero-title"><span id="heroGroomName">Muhammad Farhan</span><br><span class="and-sym">&</span><br><span id="heroBrideName">Siti Fatimah</span></h1>
+        <p id="heroDateText" class="hero-date"><i class="fa-regular fa-calendar-check"></i> Ahad, 25 Oktober 2026</p>
+        <p id="heroLocationText" class="hero-location-text"><i class="fa-solid fa-mountain-sun"></i> Lereng Hijau Pesantren Al-Mubarokah</p>
 
         <!-- COUNTDOWN TIMER -->
         <div class="countdown-card glass-card">
@@ -132,17 +138,17 @@
         <div class="bismillah-arabic">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
         
         <div class="quran-quote-card glass-card">
-          <div class="quran-arabic">
+          <div id="quranArabicText" class="quran-arabic">
             وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَّوَدَّةً وَّرَحْمَةً ۗ اِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ
           </div>
-          <p class="quran-meaning">
+          <p id="quranMeaningText" class="quran-meaning">
             "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."
           </p>
-          <span class="quran-surah">— QS. Ar-Rum Ayat 21 —</span>
+          <span id="quranSurahText" class="quran-surah">— QS. Ar-Rum Ayat 21 —</span>
         </div>
 
         <div class="santri-greeting-box">
-          <p class="santri-ta'dzim">
+          <p id="greetingText" class="santri-ta'dzim">
             <strong>Assalamu’alaikum Warahmatullahi Wabarakatuh</strong><br>
             Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta'ala, serta meneladani sunnah baginda Nabi Muhammad SAW, dengan kerendahan hati dan ta'dzim kami mengundang Bapak/Ibu/Saudara/i serta para Sahabat sekalian untuk menghadiri dan memberikan doa restu pada pernikahan putra-putri kami:
           </p>
@@ -163,21 +169,21 @@
           <!-- MEMPELAI PRIA -->
           <div class="couple-card glass-card">
             <div class="couple-arch-frame">
-              <img src="assets/images/groom_portrait.jpg" alt="Kang Muhammad Farhan Al-Hafidz" class="couple-img">
+              <img id="groomImg" src="assets/images/groom_portrait.jpg" alt="Kang Muhammad Farhan Al-Hafidz" class="couple-img">
               <div class="arch-gold-line"></div>
-              <span class="badge-role">Kang Santri</span>
+              <span id="groomRoleBadge" class="badge-role">Kang Santri</span>
             </div>
             <div class="couple-info text-center">
-              <h3 class="couple-fullname">Muhammad Farhan Al-Hafidz, S.Pd.</h3>
+              <h3 id="groomFullName" class="couple-fullname">Muhammad Farhan Al-Hafidz, S.Pd.</h3>
               <p class="couple-parent">
                 Putra Pertama dari:<br>
-                <strong>KH. Ahmad Dahlan Basri</strong> & <strong>Nyai Hj. Aminah Masrurah</strong>
+                <strong id="groomFather">KH. Ahmad Dahlan Basri</strong> & <strong id="groomMother">Nyai Hj. Aminah Masrurah</strong>
               </p>
-              <div class="santri-origin">
+              <div id="groomPesantren" class="santri-origin">
                 <i class="fa-solid fa-graduation-cap"></i> Alumni Pondok Pesantren Raudlatul Ulum & Ma'had Aly
               </div>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram Mempelai Pria">
-                <i class="fa-brands fa-instagram"></i> @kangfarhan.hafiz
+              <a id="groomInstaLink" href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram Mempelai Pria">
+                <i class="fa-brands fa-instagram"></i> <span id="groomInstaUser">@kangfarhan.hafiz</span>
               </a>
             </div>
           </div>
@@ -192,21 +198,21 @@
           <!-- MEMPELAI WANITA -->
           <div class="couple-card glass-card">
             <div class="couple-arch-frame">
-              <img src="assets/images/bride_portrait.jpg" alt="Ning Siti Fatimah Az-Zahra" class="couple-img">
+              <img id="brideImg" src="assets/images/bride_portrait.jpg" alt="Ning Siti Fatimah Az-Zahra" class="couple-img">
               <div class="arch-gold-line"></div>
-              <span class="badge-role">Ning Santri</span>
+              <span id="brideRoleBadge" class="badge-role">Ning Santri</span>
             </div>
             <div class="couple-info text-center">
-              <h3 class="couple-fullname">Siti Fatimah Az-Zahra, S.Ag.</h3>
+              <h3 id="brideFullName" class="couple-fullname">Siti Fatimah Az-Zahra, S.Ag.</h3>
               <p class="couple-parent">
                 Putri Kedua dari:<br>
-                <strong>KH. Mansyur Shodiq</strong> & <strong>Nyai Hj. Siti Khadijah</strong>
+                <strong id="brideFather">KH. Mansyur Shodiq</strong> & <strong id="brideMother">Nyai Hj. Siti Khadijah</strong>
               </p>
-              <div class="santri-origin">
+              <div id="bridePesantren" class="santri-origin">
                 <i class="fa-solid fa-graduation-cap"></i> Alumni Pondok Pesantren Al-Fath Lil Banat
               </div>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram Mempelai Wanita">
-                <i class="fa-brands fa-instagram"></i> @ningfatimah.zahra
+              <a id="brideInstaLink" href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram Mempelai Wanita">
+                <i class="fa-brands fa-instagram"></i> <span id="brideInstaUser">@ningfatimah.zahra</span>
               </a>
             </div>
           </div>
@@ -228,27 +234,27 @@
           <!-- AKAD NIKAH -->
           <div class="event-card glass-card">
             <div class="event-badge"><i class="fa-solid fa-ring"></i> Sakral & Khidmat</div>
-            <h3 class="event-name">Akad Nikah</h3>
+            <h3 id="akadTitle" class="event-name">Akad Nikah</h3>
             <div class="event-time-row">
               <i class="fa-regular fa-calendar"></i>
-              <span>Ahad, 25 Oktober 2026</span>
+              <span id="akadDateText">Ahad, 25 Oktober 2026</span>
             </div>
             <div class="event-time-row">
               <i class="fa-regular fa-clock"></i>
-              <span>Pukul 08.00 - 10.00 WIB</span>
+              <span id="akadTimeText">Pukul 08.00 - 10.00 WIB</span>
             </div>
             <div class="event-loc-row">
               <i class="fa-solid fa-mosque"></i>
               <div>
-                <strong>Masjid Jami' Pesantren Al-Mubarokah</strong>
-                <p>Jl. Lembah Pinus No. 09, Kawasan Lereng Asri, Batu - Jawa Timur</p>
+                <strong id="akadVenueName">Masjid Jami' Pesantren Al-Mubarokah</strong>
+                <p id="akadVenueAddress">Jl. Lembah Pinus No. 09, Kawasan Lereng Asri, Batu - Jawa Timur</p>
               </div>
             </div>
             <div class="event-action-buttons">
-              <a href="https://maps.google.com/?q=Batu+Jawa+Timur" target="_blank" class="btn-event btn-maps">
+              <a id="akadMapsLink" href="https://maps.google.com/?q=Batu+Jawa+Timur" target="_blank" class="btn-event btn-maps">
                 <i class="fa-solid fa-location-dot"></i> Buka Google Maps
               </a>
-              <button class="btn-event btn-add-calendar" onclick="saveToGoogleCalendar('Akad Nikah Farhan & Fatimah', 'Masjid Jami Pesantren Al-Mubarokah', '20261025T010000Z', '20261025T030000Z')">
+              <button id="btnCalendarAkad" class="btn-event btn-add-calendar">
                 <i class="fa-regular fa-calendar-plus"></i> Simpan Kalender
               </button>
             </div>
@@ -257,27 +263,27 @@
           <!-- RESEPSI / WALIMATUL 'URS -->
           <div class="event-card glass-card highlight-card">
             <div class="event-badge celebration"><i class="fa-solid fa-champagne-glasses"></i> Walimatul 'Urs</div>
-            <h3 class="event-name">Resepsi Pernikahan</h3>
+            <h3 id="resepsiTitle" class="event-name">Resepsi Pernikahan</h3>
             <div class="event-time-row">
               <i class="fa-regular fa-calendar"></i>
-              <span>Ahad, 25 Oktober 2026</span>
+              <span id="resepsiDateText">Ahad, 25 Oktober 2026</span>
             </div>
             <div class="event-time-row">
               <i class="fa-regular fa-clock"></i>
-              <span>Pukul 11.00 - 17.00 WIB (Selesai)</span>
+              <span id="resepsiTimeText">Pukul 11.00 - 17.00 WIB (Selesai)</span>
             </div>
             <div class="event-loc-row">
               <i class="fa-solid fa-tree"></i>
               <div>
-                <strong>Bale Alam Santri & Taman Firdaus</strong>
-                <p>Kawasan Wisata Alam Pesantren, Jl. Lembah Pinus No. 09, Batu - Jawa Timur</p>
+                <strong id="resepsiVenueName">Bale Alam Santri & Taman Firdaus</strong>
+                <p id="resepsiVenueAddress">Kawasan Wisata Alam Pesantren, Jl. Lembah Pinus No. 09, Batu - Jawa Timur</p>
               </div>
             </div>
             <div class="event-action-buttons">
-              <a href="https://maps.google.com/?q=Batu+Jawa+Timur" target="_blank" class="btn-event btn-maps">
+              <a id="resepsiMapsLink" href="https://maps.google.com/?q=Batu+Jawa+Timur" target="_blank" class="btn-event btn-maps">
                 <i class="fa-solid fa-location-dot"></i> Rute Lokasi
               </a>
-              <button class="btn-event btn-add-calendar" onclick="saveToGoogleCalendar('Resepsi Walimatul Urs Farhan & Fatimah', 'Bale Alam Santri Taman Firdaus', '20261025T040000Z', '20261025T100000Z')">
+              <button id="btnCalendarResepsi" class="btn-event btn-add-calendar">
                 <i class="fa-regular fa-calendar-plus"></i> Simpan Kalender
               </button>
             </div>
@@ -322,27 +328,27 @@
           <div class="timeline-item">
             <div class="timeline-dot"><i class="fa-solid fa-book-quran"></i></div>
             <div class="timeline-content glass-card">
-              <span class="timeline-year">Tahun 2023</span>
-              <h4 class="timeline-heading">Pertemuan di Majelis Bahtsul Masa'il</h4>
-              <p>Berawal dari musyawarah ilmiah antar pondok pesantren se-Jawa Timur. Tanpa saling bertatap lama, ada rasa kagum atas keluhuran adab dan ketawadhuan masing-masing yang tersimpan rapi dalam doa sepertiga malam.</p>
+              <span id="storyYear1" class="timeline-year">Tahun 2023</span>
+              <h4 id="storyTitle1" class="timeline-heading">Pertemuan di Majelis Bahtsul Masa'il</h4>
+              <p id="storyDesc1">Berawal dari musyawarah ilmiah antar pondok pesantren se-Jawa Timur. Tanpa saling bertatap lama, ada rasa kagum atas keluhuran adab dan ketawadhuan masing-masing yang tersimpan rapi dalam doa sepertiga malam.</p>
             </div>
           </div>
 
           <div class="timeline-item">
             <div class="timeline-dot"><i class="fa-solid fa-feather"></i></div>
             <div class="timeline-content glass-card">
-              <span class="timeline-year">Awal 2025</span>
-              <h4 class="timeline-heading">Jalur Ta'aruf & Dawuh Kyai</h4>
-              <p>Melalui perantara guru mulia dan restu kedua orang tua, niat mulia ini disampaikan melalui jalur ta'aruf yang syar'i. Setelah istikharah yang panjang, Allah mantapkan hati kedua keluarga besar untuk menyatukan nasab keilmuan.</p>
+              <span id="storyYear2" class="timeline-year">Awal 2025</span>
+              <h4 id="storyTitle2" class="timeline-heading">Jalur Ta'aruf & Dawuh Kyai</h4>
+              <p id="storyDesc2">Melalui perantara guru mulia dan restu kedua orang tua, niat mulia ini disampaikan melalui jalur ta'aruf yang syar'i. Setelah istikharah yang panjang, Allah mantapkan hati kedua keluarga besar untuk menyatukan nasab keilmuan.</p>
             </div>
           </div>
 
           <div class="timeline-item">
             <div class="timeline-dot"><i class="fa-solid fa-rings-wedding"></i></div>
             <div class="timeline-content glass-card">
-              <span class="timeline-year">Oktober 2026</span>
-              <h4 class="timeline-heading">Ikatan Suci Mitsaqan Ghalidha</h4>
-              <p>Kini, dengan mengharap barakah dari para guru dan para kiai, kami melangkah bersama menuju bahtera rumah tangga yang sakinah, mawaddah, wa rahmah di tengah syahdunya alam ciptaan-Nya.</p>
+              <span id="storyYear3" class="timeline-year">Oktober 2026</span>
+              <h4 id="storyTitle3" class="timeline-heading">Ikatan Suci Mitsaqan Ghalidha</h4>
+              <p id="storyDesc3">Kini, dengan mengharap barakah dari para guru dan para kiai, kami melangkah bersama menuju bahtera rumah tangga yang sakinah, mawaddah, wa rahmah di tengah syahdunya alam ciptaan-Nya.</p>
             </div>
           </div>
         </div>
@@ -360,7 +366,7 @@
 
         <div class="gallery-grid">
           <div class="gallery-item" onclick="openLightbox('assets/images/couple_santri.jpg', 'Kedua Mempelai di Perbukitan Hijau')">
-            <img src="assets/images/couple_santri.jpg" alt="Foto Bersama Mempelai di Alam">
+            <img id="galleryImg1" src="assets/images/couple_santri.jpg" alt="Foto Bersama Mempelai di Alam">
             <div class="gallery-overlay">
               <i class="fa-solid fa-magnifying-glass-plus"></i>
               <span>Pemandangan Bukit Sawah</span>
@@ -368,7 +374,7 @@
           </div>
 
           <div class="gallery-item" onclick="openLightbox('assets/images/hero_scenery.jpg', 'Lanskap Pesantren di Lereng Lembah Pegunungan')">
-            <img src="assets/images/hero_scenery.jpg" alt="Panorama Alam Pegunungan">
+            <img id="galleryImg2" src="assets/images/hero_scenery.jpg" alt="Panorama Alam Pegunungan">
             <div class="gallery-overlay">
               <i class="fa-solid fa-magnifying-glass-plus"></i>
               <span>Panorama Pesantren & Alam</span>
@@ -376,7 +382,7 @@
           </div>
 
           <div class="gallery-item" onclick="openLightbox('assets/images/groom_portrait.jpg', 'Potret Kang Muhammad Farhan Al-Hafidz')">
-            <img src="assets/images/groom_portrait.jpg" alt="Potret Mempelai Pria">
+            <img id="galleryImg3" src="assets/images/groom_portrait.jpg" alt="Potret Mempelai Pria">
             <div class="gallery-overlay">
               <i class="fa-solid fa-magnifying-glass-plus"></i>
               <span>Kang Farhan</span>
@@ -384,7 +390,7 @@
           </div>
 
           <div class="gallery-item" onclick="openLightbox('assets/images/bride_portrait.jpg', 'Potret Ning Siti Fatimah Az-Zahra')">
-            <img src="assets/images/bride_portrait.jpg" alt="Potret Mempelai Wanita">
+            <img id="galleryImg4" src="assets/images/bride_portrait.jpg" alt="Potret Mempelai Wanita">
             <div class="gallery-overlay">
               <i class="fa-solid fa-magnifying-glass-plus"></i>
               <span>Ning Fatimah</span>
@@ -395,10 +401,10 @@
         <!-- KUTIPAN BERKAH SANTRI -->
         <div class="quote-hikmah glass-card text-center">
           <i class="fa-solid fa-quote-left quote-icon"></i>
-          <p class="quote-body">
+          <p id="quoteHikmahBody" class="quote-body">
             "Cinta sejati seorang santri bukan sekadar tentang rupa dan kata-kata manis, melainkan tentang kesiapan saling membimbing dalam taat, memuliakan Al-Qur'an, dan bersama-sama meniti jalan menuju surga-Nya."
           </p>
-          <span class="quote-author">— Untaian Mutiara Santri Nusantara —</span>
+          <span id="quoteHikmahAuthor" class="quote-author">— Untaian Mutiara Santri Nusantara —</span>
         </div>
       </div>
     </section>
@@ -475,44 +481,44 @@
         </div>
 
         <div class="bank-cards-grid">
-          <!-- BSI (Bank Syariah Indonesia) -->
+          <!-- Bank 1 -->
           <div class="bank-card glass-card">
             <div class="bank-header">
               <div class="bank-logo-chip">
                 <i class="fa-solid fa-microchip"></i>
-                <span class="bank-name-text">BSI (Bank Syariah Indonesia)</span>
+                <span id="bank1Name" class="bank-name-text">BSI (Bank Syariah Indonesia)</span>
               </div>
               <i class="fa-solid fa-wifi contactless-icon"></i>
             </div>
             <div class="account-number-block">
               <span class="account-label">Nomor Rekening:</span>
-              <div class="account-number" id="bsiNumber">7192837465</div>
+              <div class="account-number" id="bank1Number">7192837465</div>
             </div>
             <div class="account-holder">
-              <span>a.n.</span> <strong>MUHAMMAD FARHAN</strong>
+              <span>a.n.</span> <strong id="bank1Holder">MUHAMMAD FARHAN</strong>
             </div>
-            <button class="btn-copy-account" onclick="copyAccountNumber('7192837465', 'BSI')">
+            <button id="btnCopyBank1" class="btn-copy-account">
               <i class="fa-regular fa-copy"></i> Salin No. Rekening
             </button>
           </div>
 
-          <!-- BCA -->
+          <!-- Bank 2 -->
           <div class="bank-card glass-card">
             <div class="bank-header">
               <div class="bank-logo-chip">
                 <i class="fa-solid fa-microchip"></i>
-                <span class="bank-name-text">BCA</span>
+                <span id="bank2Name" class="bank-name-text">BCA</span>
               </div>
               <i class="fa-solid fa-wifi contactless-icon"></i>
             </div>
             <div class="account-number-block">
               <span class="account-label">Nomor Rekening:</span>
-              <div class="account-number" id="bcaNumber">8273940182</div>
+              <div class="account-number" id="bank2Number">8273940182</div>
             </div>
             <div class="account-holder">
-              <span>a.n.</span> <strong>SITI FATIMAH AZ ZAHRA</strong>
+              <span>a.n.</span> <strong id="bank2Holder">SITI FATIMAH AZ ZAHRA</strong>
             </div>
-            <button class="btn-copy-account" onclick="copyAccountNumber('8273940182', 'BCA')">
+            <button id="btnCopyBank2" class="btn-copy-account">
               <i class="fa-regular fa-copy"></i> Salin No. Rekening
             </button>
           </div>
@@ -524,11 +530,11 @@
           <h4>Kirim Kado / Bingkisan Fisik</h4>
           <p>Dapat dikirimkan ke alamat kediaman keluarga mempelai:</p>
           <p class="physical-address" id="homeAddress">
-            <strong>Komplek Ndalem Pondok Pesantren Al-Mubarokah</strong><br>
+            Komplek Ndalem Pondok Pesantren Al-Mubarokah<br>
             d/a Jl. Lembah Pinus No. 09, Desa Wisata Asri, Kec. Bumiaji, Kota Batu, Jawa Timur 65331<br>
             (Penerima: Kang Farhan / Ning Fatimah - 0812-3456-7890)
           </p>
-          <button class="btn-copy-address" onclick="copyAddressText()">
+          <button id="btnCopyAddress" class="btn-copy-address">
             <i class="fa-regular fa-clipboard"></i> Salin Alamat Pengiriman
           </button>
         </div>
@@ -542,29 +548,29 @@
           <div class="doa-arabic-closing">
             بَارَكَ اللّٰهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِيْ خَيْرٍ
           </div>
-          <p class="doa-latin">
+          <p id="closingDoaLatin" class="doa-latin">
             "Baarakallaahu laka wa baaraka 'alaika wa jama'a bainakuma fii khair"
           </p>
-          <p class="doa-arti">
+          <p id="closingDoaArti" class="doa-arti">
             (Semoga Allah memberkahimu di waktu bahagia dan memberkahimu di waktu susah, serta mengumpulkan kalian berdua dalam kebaikan.)
           </p>
 
           <div class="closing-salutation">
             <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir serta memberikan doa restu.</p>
             <p>Atas kehadiran dan doa restunya, kami haturkan terima kasih yang sedalam-dalamnya.</p>
-            <p class="family-honor">
-              Wassalamu’alaikum Warahmatullahi Wabarakatuh<br><br>
+            <div class="family-honor">
+              <p>Wassalamu’alaikum Warahmatullahi Wabarakatuh</p><br>
               <strong>Kami yang berbahagia,</strong><br>
-              Keluarga Besar KH. Ahmad Dahlan Basri & Nyai Hj. Aminah<br>
-              Keluarga Besar KH. Mansyur Shodiq & Nyai Hj. Siti Khadijah<br><br>
+              <span id="closingFamilyGroom">Keluarga Besar KH. Ahmad Dahlan Basri & Nyai Hj. Aminah Masrurah</span><br>
+              <span id="closingFamilyBride">Keluarga Besar KH. Mansyur Shodiq & Nyai Hj. Siti Khadijah</span><br><br>
               Beserta Kedua Mempelai:<br>
-              <span class="family-names">Kang Farhan & Ning Fatimah</span>
-            </p>
+              <span id="closingCoupleNames" class="family-names">Kang Farhan & Ning Fatimah</span>
+            </div>
           </div>
         </div>
 
         <footer class="main-footer">
-          <p>© 2026 Walimatul 'Urs Muhammad Farhan & Siti Fatimah</p>
+          <p id="footerCopyright">© 2026 Walimatul 'Urs Muhammad Farhan & Siti Fatimah</p>
           <p class="signature-tag">Dibuat penuh cinta dengan tema Santri & Keindahan Alam Nusantara</p>
         </footer>
       </div>
@@ -598,6 +604,454 @@
       </a>
     </nav>
   </main>
+
+  <!-- ===================================================================
+       EDITOR DRAWER MODAL (PENGATURAN & RUBAH SEMUA DATA)
+       =================================================================== -->
+  <div id="editorModal" class="editor-modal">
+    <div id="editorBackdrop" class="editor-backdrop"></div>
+    <div class="editor-container">
+      
+      <!-- Editor Header -->
+      <div class="editor-header">
+        <div class="editor-header-title">
+          <div class="header-icon"><i class="fa-solid fa-sliders"></i></div>
+          <div>
+            <h3>Panel Ubah Data Undangan</h3>
+            <p>Sesuaikan seluruh informasi mempelai, acara, ayat, dan amplop</p>
+          </div>
+        </div>
+        <button id="btnCloseEditor" class="btn-editor-close" title="Tutup Panel">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Editor Tab Navigation -->
+      <div class="editor-tabs-nav">
+        <button class="editor-tab-btn active" data-tab="tab-general">
+          <i class="fa-solid fa-house-chimney"></i> Umum & Cover
+        </button>
+        <button class="editor-tab-btn" data-tab="tab-groom">
+          <i class="fa-solid fa-user-tie"></i> Mempelai Pria
+        </button>
+        <button class="editor-tab-btn" data-tab="tab-bride">
+          <i class="fa-solid fa-user-nurse"></i> Mempelai Wanita
+        </button>
+        <button class="editor-tab-btn" data-tab="tab-events">
+          <i class="fa-regular fa-calendar-check"></i> Agenda Acara
+        </button>
+        <button class="editor-tab-btn" data-tab="tab-story">
+          <i class="fa-solid fa-book-quran"></i> Ayat & Kisah
+        </button>
+        <button class="editor-tab-btn" data-tab="tab-envelope">
+          <i class="fa-solid fa-wallet"></i> Amplop Digital
+        </button>
+        <button class="editor-tab-btn" data-tab="tab-guest-gen">
+          <i class="fa-solid fa-link"></i> Generator Tamu
+        </button>
+        <button class="editor-tab-btn" data-tab="tab-backup">
+          <i class="fa-solid fa-database"></i> Cadangan & Reset
+        </button>
+      </div>
+
+      <!-- Editor Scrollable Body -->
+      <div class="editor-body">
+        
+        <!-- TAB 1: UMUM & COVER -->
+        <div id="tab-general" class="editor-tab-pane active">
+          <div class="editor-section-heading"><i class="fa-solid fa-palette"></i> Tampilan Cover & Headline</div>
+          <div class="editor-form-grid">
+            <div class="editor-group">
+              <label><i class="fa-solid fa-tag"></i> Subheading Cover</label>
+              <input type="text" id="editCoverSubheading" class="editor-input" placeholder="WALIMATUL 'URS">
+            </div>
+            <div class="editor-group">
+              <label><i class="fa-solid fa-leaf"></i> Kalimat Berkah Cover</label>
+              <input type="text" id="editCoverBlessing" class="editor-input" placeholder="Menenun Berkah di Bumi Pesantren">
+            </div>
+            <div class="editor-group">
+              <label><i class="fa-solid fa-shield-halved"></i> Badge Hero Section</label>
+              <input type="text" id="editHeroBadge" class="editor-input" placeholder="Walimatul 'Urs Santri">
+            </div>
+            <div class="editor-group">
+              <label><i class="fa-solid fa-calendar-day"></i> Format Tanggal Utama (Hero)</label>
+              <input type="text" id="editHeroDate" class="editor-input" placeholder="Ahad, 25 Oktober 2026">
+            </div>
+            <div class="editor-group span-2">
+              <label><i class="fa-solid fa-mountain-sun"></i> Lokasi Singkat (Hero)</label>
+              <input type="text" id="editHeroLocation" class="editor-input" placeholder="Lereng Hijau Pesantren Al-Mubarokah">
+            </div>
+            <div class="editor-group span-2">
+              <label><i class="fa-solid fa-image"></i> URL Foto Pasangan di Cover</label>
+              <div class="image-preview-row">
+                <img id="previewCoverImg" src="assets/images/couple_santri.jpg" class="img-preview-thumb" alt="Preview">
+                <input type="text" id="editCoverImgUrl" class="editor-input" placeholder="Path lokal atau URL gambar (https://...)">
+              </div>
+            </div>
+            <div class="editor-group span-2">
+              <label><i class="fa-solid fa-panorama"></i> URL Foto Pemandangan Background (Hero)</label>
+              <div class="image-preview-row">
+                <img id="previewHeroBgImg" src="assets/images/hero_scenery.jpg" class="img-preview-thumb" alt="Preview">
+                <input type="text" id="editHeroBgUrl" class="editor-input" placeholder="Path lokal atau URL gambar (https://...)">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 2: MEMPELAI PRIA -->
+        <div id="tab-groom" class="editor-tab-pane">
+          <div class="editor-section-heading"><i class="fa-solid fa-user-tie"></i> Data Calon Mempelai Pria</div>
+          <div class="editor-form-grid">
+            <div class="editor-group">
+              <label><i class="fa-regular fa-id-badge"></i> Nama Panggilan</label>
+              <input type="text" id="editGroomShortName" class="editor-input" placeholder="Farhan">
+            </div>
+            <div class="editor-group">
+              <label><i class="fa-solid fa-certificate"></i> Gelar / Badge Peran</label>
+              <input type="text" id="editGroomRoleBadge" class="editor-input" placeholder="Kang Santri">
+            </div>
+            <div class="editor-group span-2">
+              <label><i class="fa-solid fa-user"></i> Nama Lengkap & Gelar</label>
+              <input type="text" id="editGroomFullName" class="editor-input" placeholder="Muhammad Farhan Al-Hafidz, S.Pd.">
+            </div>
+            <div class="editor-group">
+              <label><i class="fa-solid fa-person"></i> Nama Ayah</label>
+              <input type="text" id="editGroomFather" class="editor-input" placeholder="KH. Ahmad Dahlan Basri">
+            </div>
+            <div class="editor-group">
+              <label><i class="fa-solid fa-person-dress"></i> Nama Ibu</label>
+              <input type="text" id="editGroomMother" class="editor-input" placeholder="Nyai Hj. Aminah Masrurah">
+            </div>
+            <div class="editor-group span-2">
+              <label><i class="fa-solid fa-graduation-cap"></i> Pesantren / Riwayat Pendidikan</label>
+              <input type="text" id="editGroomPesantren" class="editor-input" placeholder="Alumni Pondok Pesantren Raudlatul Ulum & Ma'had Aly">
+            </div>
+            <div class="editor-group">
+              <label><i class="fa-brands fa-instagram"></i> Username Instagram</label>
+              <input type="text" id="editGroomInsta" class="editor-input" placeholder="@kangfarhan.hafiz">
+            </div>
+            <div class="editor-group">
+              <label><i class="fa-solid fa-link"></i> Link Profil Instagram</label>
+              <input type="text" id="editGroomInstaLink" class="editor-input" placeholder="https://instagram.com/kangfarhan.hafiz">
+            </div>
+            <div class="editor-group span-2">
+              <label><i class="fa-solid fa-image"></i> URL Foto Mempelai Pria</label>
+              <div class="image-preview-row">
+                <img id="previewGroomImg" src="assets/images/groom_portrait.jpg" class="img-preview-thumb" alt="Preview">
+                <input type="text" id="editGroomImgUrl" class="editor-input" placeholder="Path lokal atau URL foto">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 3: MEMPELAI WANITA -->
+        <div id="tab-bride" class="editor-tab-pane">
+          <div class="editor-section-heading"><i class="fa-solid fa-user-nurse"></i> Data Calon Mempelai Wanita</div>
+          <div class="editor-form-grid">
+            <div class="editor-group">
+              <label><i class="fa-regular fa-id-badge"></i> Nama Panggilan</label>
+              <input type="text" id="editBrideShortName" class="editor-input" placeholder="Fatimah">
+            </div>
+            <div class="editor-group">
+              <label><i class="fa-solid fa-certificate"></i> Gelar / Badge Peran</label>
+              <input type="text" id="editBrideRoleBadge" class="editor-input" placeholder="Ning Santri">
+            </div>
+            <div class="editor-group span-2">
+              <label><i class="fa-solid fa-user"></i> Nama Lengkap & Gelar</label>
+              <input type="text" id="editBrideFullName" class="editor-input" placeholder="Siti Fatimah Az-Zahra, S.Ag.">
+            </div>
+            <div class="editor-group">
+              <label><i class="fa-solid fa-person"></i> Nama Ayah</label>
+              <input type="text" id="editBrideFather" class="editor-input" placeholder="KH. Mansyur Shodiq">
+            </div>
+            <div class="editor-group">
+              <label><i class="fa-solid fa-person-dress"></i> Nama Ibu</label>
+              <input type="text" id="editBrideMother" class="editor-input" placeholder="Nyai Hj. Siti Khadijah">
+            </div>
+            <div class="editor-group span-2">
+              <label><i class="fa-solid fa-graduation-cap"></i> Pesantren / Riwayat Pendidikan</label>
+              <input type="text" id="editBridePesantren" class="editor-input" placeholder="Alumni Pondok Pesantren Al-Fath Lil Banat">
+            </div>
+            <div class="editor-group">
+              <label><i class="fa-brands fa-instagram"></i> Username Instagram</label>
+              <input type="text" id="editBrideInsta" class="editor-input" placeholder="@ningfatimah.zahra">
+            </div>
+            <div class="editor-group">
+              <label><i class="fa-solid fa-link"></i> Link Profil Instagram</label>
+              <input type="text" id="editBrideInstaLink" class="editor-input" placeholder="https://instagram.com/ningfatimah.zahra">
+            </div>
+            <div class="editor-group span-2">
+              <label><i class="fa-solid fa-image"></i> URL Foto Mempelai Wanita</label>
+              <div class="image-preview-row">
+                <img id="previewBrideImg" src="assets/images/bride_portrait.jpg" class="img-preview-thumb" alt="Preview">
+                <input type="text" id="editBrideImgUrl" class="editor-input" placeholder="Path lokal atau URL foto">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 4: RANGKAIAN ACARA -->
+        <div id="tab-events" class="editor-tab-pane">
+          <div class="editor-section-heading"><i class="fa-regular fa-hourglass-half"></i> Pengaturan Waktu Hitung Mundur (Countdown)</div>
+          <div class="editor-form-grid">
+            <div class="editor-group span-2">
+              <label><i class="fa-solid fa-clock"></i> Target Tanggal & Jam Countdown</label>
+              <input type="datetime-local" id="editCountdownTarget" class="editor-input">
+            </div>
+          </div>
+
+          <div class="editor-section-heading"><i class="fa-solid fa-ring"></i> Acara 1: Akad Nikah</div>
+          <div class="editor-form-grid">
+            <div class="editor-group">
+              <label>Judul Sesi</label>
+              <input type="text" id="editAkadTitle" class="editor-input" placeholder="Akad Nikah">
+            </div>
+            <div class="editor-group">
+              <label>Hari & Tanggal</label>
+              <input type="text" id="editAkadDate" class="editor-input" placeholder="Ahad, 25 Oktober 2026">
+            </div>
+            <div class="editor-group">
+              <label>Waktu / Jam Pelaksanaan</label>
+              <input type="text" id="editAkadTime" class="editor-input" placeholder="Pukul 08.00 - 10.00 WIB">
+            </div>
+            <div class="editor-group">
+              <label>Nama Tempat / Masjid</label>
+              <input type="text" id="editAkadVenue" class="editor-input" placeholder="Masjid Jami' Pesantren Al-Mubarokah">
+            </div>
+            <div class="editor-group span-2">
+              <label>Alamat Lengkap</label>
+              <input type="text" id="editAkadAddress" class="editor-input" placeholder="Jl. Lembah Pinus No. 09, Batu">
+            </div>
+            <div class="editor-group span-2">
+              <label><i class="fa-solid fa-map-location-dot"></i> Link Google Maps</label>
+              <input type="text" id="editAkadMaps" class="editor-input" placeholder="https://maps.google.com/?q=...">
+            </div>
+          </div>
+
+          <div class="editor-section-heading"><i class="fa-solid fa-champagne-glasses"></i> Acara 2: Resepsi Walimatul 'Urs</div>
+          <div class="editor-form-grid">
+            <div class="editor-group">
+              <label>Judul Sesi</label>
+              <input type="text" id="editResepsiTitle" class="editor-input" placeholder="Resepsi Pernikahan">
+            </div>
+            <div class="editor-group">
+              <label>Hari & Tanggal</label>
+              <input type="text" id="editResepsiDate" class="editor-input" placeholder="Ahad, 25 Oktober 2026">
+            </div>
+            <div class="editor-group">
+              <label>Waktu / Jam Pelaksanaan</label>
+              <input type="text" id="editResepsiTime" class="editor-input" placeholder="Pukul 11.00 - 17.00 WIB">
+            </div>
+            <div class="editor-group">
+              <label>Nama Tempat / Gedung</label>
+              <input type="text" id="editResepsiVenue" class="editor-input" placeholder="Bale Alam Santri & Taman Firdaus">
+            </div>
+            <div class="editor-group span-2">
+              <label>Alamat Lengkap</label>
+              <input type="text" id="editResepsiAddress" class="editor-input" placeholder="Kawasan Wisata Alam Pesantren, Jl. Lembah Pinus No. 09, Batu">
+            </div>
+            <div class="editor-group span-2">
+              <label><i class="fa-solid fa-map-location-dot"></i> Link Google Maps</label>
+              <input type="text" id="editResepsiMaps" class="editor-input" placeholder="https://maps.google.com/?q=...">
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 5: AYAT & KISAH -->
+        <div id="tab-story" class="editor-tab-pane">
+          <div class="editor-section-heading"><i class="fa-solid fa-quran"></i> Ayat Suci & Salam Pembuka</div>
+          <div class="editor-form-grid single-col">
+            <div class="editor-group">
+              <label>Keterangan Surah & Ayat</label>
+              <input type="text" id="editQuranSurah" class="editor-input" placeholder="— QS. Ar-Rum Ayat 21 —">
+            </div>
+            <div class="editor-group">
+              <label>Teks Ayat Arab</label>
+              <textarea id="editQuranArabic" class="editor-textarea" rows="2"></textarea>
+            </div>
+            <div class="editor-group">
+              <label>Terjemahan Arti Ayat</label>
+              <textarea id="editQuranMeaning" class="editor-textarea" rows="3"></textarea>
+            </div>
+            <div class="editor-group">
+              <label>Teks Salam & Kata Pengantar Undangan</label>
+              <textarea id="editGreetingText" class="editor-textarea" rows="3"></textarea>
+            </div>
+          </div>
+
+          <div class="editor-section-heading"><i class="fa-solid fa-quote-left"></i> Mutiara Hikmah Santri</div>
+          <div class="editor-form-grid single-col">
+            <div class="editor-group">
+              <label>Isi Kutipan</label>
+              <textarea id="editHikmahBody" class="editor-textarea" rows="2"></textarea>
+            </div>
+            <div class="editor-group">
+              <label>Penulis / Sumber Kutipan</label>
+              <input type="text" id="editHikmahAuthor" class="editor-input" placeholder="— Untaian Mutiara Santri Nusantara —">
+            </div>
+          </div>
+
+          <div class="editor-section-heading"><i class="fa-solid fa-book-open"></i> Titian Takdir / Kisah Berkah</div>
+          <div class="editor-form-grid">
+            <div class="editor-group">
+              <label>Milestone 1: Waktu / Tahun</label>
+              <input type="text" id="editStoryYear1" class="editor-input" placeholder="Tahun 2023">
+            </div>
+            <div class="editor-group">
+              <label>Milestone 1: Judul</label>
+              <input type="text" id="editStoryTitle1" class="editor-input" placeholder="Pertemuan di Bahtsul Masa'il">
+            </div>
+            <div class="editor-group span-2">
+              <label>Milestone 1: Kisah</label>
+              <textarea id="editStoryDesc1" class="editor-textarea" rows="2"></textarea>
+            </div>
+
+            <div class="editor-group">
+              <label>Milestone 2: Waktu / Tahun</label>
+              <input type="text" id="editStoryYear2" class="editor-input" placeholder="Awal 2025">
+            </div>
+            <div class="editor-group">
+              <label>Milestone 2: Judul</label>
+              <input type="text" id="editStoryTitle2" class="editor-input" placeholder="Jalur Ta'aruf & Dawuh Kyai">
+            </div>
+            <div class="editor-group span-2">
+              <label>Milestone 2: Kisah</label>
+              <textarea id="editStoryDesc2" class="editor-textarea" rows="2"></textarea>
+            </div>
+
+            <div class="editor-group">
+              <label>Milestone 3: Waktu / Tahun</label>
+              <input type="text" id="editStoryYear3" class="editor-input" placeholder="Oktober 2026">
+            </div>
+            <div class="editor-group">
+              <label>Milestone 3: Judul</label>
+              <input type="text" id="editStoryTitle3" class="editor-input" placeholder="Ikatan Suci Mitsaqan Ghalidha">
+            </div>
+            <div class="editor-group span-2">
+              <label>Milestone 3: Kisah</label>
+              <textarea id="editStoryDesc3" class="editor-textarea" rows="2"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 6: AMPLOP DIGITAL -->
+        <div id="tab-envelope" class="editor-tab-pane">
+          <div class="editor-section-heading"><i class="fa-solid fa-credit-card"></i> Rekening Bank 1</div>
+          <div class="editor-form-grid">
+            <div class="editor-group">
+              <label>Nama Bank</label>
+              <input type="text" id="editBank1Name" class="editor-input" placeholder="BSI (Bank Syariah Indonesia)">
+            </div>
+            <div class="editor-group">
+              <label>Nomor Rekening</label>
+              <input type="text" id="editBank1Number" class="editor-input" placeholder="7192837465">
+            </div>
+            <div class="editor-group span-2">
+              <label>Atas Nama (Pemilik Rekening)</label>
+              <input type="text" id="editBank1Holder" class="editor-input" placeholder="MUHAMMAD FARHAN">
+            </div>
+          </div>
+
+          <div class="editor-section-heading"><i class="fa-solid fa-credit-card"></i> Rekening Bank 2</div>
+          <div class="editor-form-grid">
+            <div class="editor-group">
+              <label>Nama Bank</label>
+              <input type="text" id="editBank2Name" class="editor-input" placeholder="BCA">
+            </div>
+            <div class="editor-group">
+              <label>Nomor Rekening</label>
+              <input type="text" id="editBank2Number" class="editor-input" placeholder="8273940182">
+            </div>
+            <div class="editor-group span-2">
+              <label>Atas Nama (Pemilik Rekening)</label>
+              <input type="text" id="editBank2Holder" class="editor-input" placeholder="SITI FATIMAH AZ ZAHRA">
+            </div>
+          </div>
+
+          <div class="editor-section-heading"><i class="fa-solid fa-box-open"></i> Alamat Pengiriman Kado Fisik</div>
+          <div class="editor-form-grid single-col">
+            <div class="editor-group">
+              <label>Alamat Lengkap & Penerima / Kontak</label>
+              <textarea id="editHomeAddress" class="editor-textarea" rows="3" placeholder="Komplek Ndalem Pesantren..."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 7: GENERATOR LINK TAMU -->
+        <div id="tab-guest-gen" class="editor-tab-pane">
+          <div class="editor-section-heading"><i class="fa-solid fa-share-nodes"></i> Buat Link Undangan Khusus Tamu</div>
+          <p style="font-size:0.85rem; color: rgba(255,255,255,0.75); margin-bottom: 1rem;">
+            Ketik nama tamu undangan (misal perorangan atau keluarga). Sistem akan langsung membuat tautan unik yang menampilkan nama tamu di cover undangan secara otomatis.
+          </p>
+
+          <div class="guest-gen-box">
+            <div class="editor-group">
+              <label><i class="fa-solid fa-user-tag"></i> Nama Tamu Undangan</label>
+              <input type="text" id="inputGenGuestName" class="editor-input" placeholder="Contoh: Gus Abdullah & Keluarga / H. M. Syukron">
+            </div>
+
+            <div class="editor-group">
+              <label><i class="fa-solid fa-link"></i> Hasil Tautan Undangan</label>
+              <div id="previewGenUrl" class="guest-url-preview">https://...</div>
+            </div>
+
+            <div class="guest-gen-actions">
+              <button id="btnCopyGenUrl" class="btn-gen-action btn-gen-copy">
+                <i class="fa-regular fa-copy"></i> Salin Link
+              </button>
+              <button id="btnShareGenWa" class="btn-gen-action btn-gen-wa">
+                <i class="fa-brands fa-whatsapp"></i> Bagikan ke WhatsApp
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 8: CADANGAN & RESET -->
+        <div id="tab-backup" class="editor-tab-pane">
+          <div class="editor-section-heading"><i class="fa-solid fa-floppy-disk"></i> Ekspor & Impor Konfigurasi (JSON)</div>
+          <p style="font-size:0.85rem; color: rgba(255,255,255,0.75); margin-bottom: 1rem;">
+            Anda dapat mendownload seluruh konfigurasi data ini ke dalam file JSON sebagai arsip cadangan, atau memulihkan data dari file sebelumnya.
+          </p>
+          <div style="display:flex; flex-wrap:wrap; gap:0.8rem; margin-bottom: 1.5rem;">
+            <button id="btnExportJson" class="btn-editor-secondary">
+              <i class="fa-solid fa-file-arrow-down"></i> Unduh Cadangan Data (JSON)
+            </button>
+            <label class="btn-editor-secondary" style="cursor:pointer; display:flex; align-items:center; gap:0.5rem;">
+              <i class="fa-solid fa-file-arrow-up"></i> Muat dari File JSON
+              <input type="file" id="inputImportJson" accept=".json" style="display:none;">
+            </label>
+          </div>
+
+          <div class="editor-section-heading" style="color:#fca5a5;"><i class="fa-solid fa-triangle-exclamation"></i> Reset ke Pengaturan Awal</div>
+          <p style="font-size:0.85rem; color: rgba(255,255,255,0.75); margin-bottom: 1rem;">
+            Kembalikan semua data teks, foto, acara, dan nomor rekening ke data bawaan awal santri (Farhan & Fatimah).
+          </p>
+          <button id="btnResetDefault" class="btn-editor-danger">
+            <i class="fa-solid fa-rotate-left"></i> Reset ke Data Bawaan
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Editor Footer -->
+      <div class="editor-footer">
+        <div class="editor-footer-left">
+          <button id="btnResetInFooter" class="btn-editor-danger">
+            <i class="fa-solid fa-rotate-left"></i> Reset Default
+          </button>
+        </div>
+        <div class="editor-footer-right">
+          <button id="btnCancelEditor" class="btn-editor-secondary">
+            Batal
+          </button>
+          <button id="btnSaveEditor" class="btn-editor-primary">
+            <i class="fa-solid fa-check"></i> Simpan & Terapkan
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
 
   <!-- LIGHTBOX MODAL FOR GALLERY -->
   <div id="lightboxModal" class="lightbox-modal">
